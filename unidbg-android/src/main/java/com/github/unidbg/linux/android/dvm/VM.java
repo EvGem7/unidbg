@@ -59,7 +59,7 @@ public interface VM {
 
     int addLocalObject(DvmObject<?> object);
     int addGlobalObject(DvmObject<?> object);
-
+    void deleteLocalRefs();
     void callJNI_OnLoad(Emulator<?> emulator, Module module);
 
     /**

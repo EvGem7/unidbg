@@ -186,7 +186,8 @@ public abstract class BaseVM implements VM, DvmClassFactory {
         return classMap.get(Objects.hash(className));
     }
 
-    final void deleteLocalRefs() {
+    @Override
+    public void deleteLocalRefs() {
         for (ObjRef ref : localObjectMap.values()) {
             ref.obj.onDeleteRef();
         }
